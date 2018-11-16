@@ -7,4 +7,6 @@ function sum(a, b) {
 }
 module.exports = sum;
 
-function test(){}
+function test(){
+	return true;
+}
