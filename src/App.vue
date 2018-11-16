@@ -9,9 +9,6 @@
       <router-link to="/">
         {{ $t('pages.home.name') }}
       </router-link> |
-      <router-link to="/authentication">
-        {{ $t('pages.authentication.name') }}
-      </router-link> |
       <router-link to="/language">
         {{ $t('pages.language.name') }}
       </router-link>
