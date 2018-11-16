@@ -12,15 +12,19 @@ build site:
   script:
     - npm install
     - npm run build 
+  artifacts:
+    expire_in: 1 week
+    paths:
+      - dist
 
 
 #----- CI -------#
 
 unit test:
-  image: node:6
   stage: test
   script:
     - npm run test
+
 
 
 #----- CD -------#
