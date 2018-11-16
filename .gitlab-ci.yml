@@ -31,7 +31,7 @@ unit test:
   script:
     - npm run test
   coverage:
-    '/Statements.*?(\d+(?:\.\d+)?)%/'
+    /All files[^|]*\|[^|]*\s+([\d\.]+)/
 
 
 
