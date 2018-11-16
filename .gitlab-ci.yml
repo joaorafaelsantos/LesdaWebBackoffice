@@ -3,6 +3,27 @@ image: node:latest
 #cache:
 #  paths:
 #    - node_modules/
+
+
+#---- BUILD -----#
+
+build site:
+  stage: build
+  script:
+    - npm install
+    - npm run build 
+
+
+#----- CI -------#
+
+unit test:
+  image: node:6
+  stage: test
+  script:
+    - npm run test
+
+
+#----- CD -------#
 deploy_production:
   stage: deploy
   environment: Production
@@ -10,7 +31,5 @@ deploy_production:
     - master
   script:
     - npm install -g firebase-tools
-    - npm install
-    - npm run build 
     - firebase use --token 1/Q4ttAw7fs-opPlbg-M-o6jgnsTGIVE3Pe4utzMUSDwo lesda-dbedf
     - firebase deploy -m "Pipeline $CI_PIPELINE_ID, build $CI_BUILD_ID" --non-interactive --token $FIREBASE_DEPLOY_KEY
