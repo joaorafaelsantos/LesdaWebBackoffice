@@ -1,0 +1,13 @@
+{
+  "pages": {
+    "home": {
+      "name": "Home",
+      "title": "Welcome to LESDA Web Backoffice"
+    },
+    "language": {
+      "name": "Language",
+        "current": "Current language: ",
+        "change": "Change language"
+    }
+  }
+}
