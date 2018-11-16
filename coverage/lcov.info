@@ -1,9 +1,11 @@
 TN:
 SF:D:\LESDA\lesda-web-backoffice\src\utils\sum.js
 FN:5,sum
-FNF:1
+FN:10,test
+FNF:2
 FNH:1
 FNDA:1,sum
+FNDA:0,test
 DA:6,1
 DA:8,1
 LF:2
