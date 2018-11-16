@@ -1,6 +1,6 @@
 .DS_Store
-/web-backoffice/node_modules
-/web-backoffice/dist
+/node_modules
+/dist
 
 # local env files
 .env.local
