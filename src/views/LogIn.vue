@@ -61,6 +61,7 @@
                 // this.logInDataIsWrong = true
                 if (1 === 1) {
                     this.$store.commit('authentication/changeIsAuth', true)
+                    alert(`Welcome ${this.form.username}`)
                     this.$router.push('/restaurant')
                 }
                 // logIn(this.form)
