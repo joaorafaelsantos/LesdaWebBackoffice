@@ -57,7 +57,7 @@
 </template>
 
 <script>
-    import { signUp } from '../mixins/authentication/signUp'
+    import {signUp} from '../mixins/authentication/signUp'
 
     export default {
         name: "SignUp",
@@ -83,13 +83,12 @@
                     //     .catch(error => {
                     //
                     //     })
-                    alert('well submitted')
+                    alert('Account created!')
                     this.$router.push('/login')
                 }
-                else {
-                    alert('correct your data')
-                }
-
+                // else {
+                //     alert('correct your data')
+                // }
 
 
             }
