@@ -18,9 +18,19 @@ export default new Router({
             component: Home
         },
         {
-            path: '/language',
-            name: 'Language',
-            component: () => import('../views/Language.vue')
+            path: '/login',
+            name: 'LogIn',
+            component: () => import('../views/LogIn.vue')
+        },
+        {
+            path: '/signup',
+            name: 'SignUp',
+            component: () => import('../views/SignUp.vue')
+        },
+        {
+            path: '/restaurant',
+            name: 'Restaurant',
+            component: () => import('../views/Restaurant.vue')
         }
     ]
 })
