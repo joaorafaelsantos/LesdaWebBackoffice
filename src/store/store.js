@@ -5,7 +5,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 
-import language from './modules/language'
 import authentication from './modules/authentication'
 
 Vue.use(Vuex)

@@ -22,12 +22,15 @@
                                       placeholder="Enter your password">
                         </b-form-input>
                     </b-form-group>
+                    <!-- Incorrect data label -->
                     <p v-if="logInDataIsWrong" class="text-danger mb-4">
                         Incorrect email or password.
                     </p>
+                    <!-- Submit button -->
                     <b-button type="submit" variant="primary">Log in</b-button>
                 </b-form>
 
+                <!-- Secondary options -> Sign up link -->
                 <div class="auth-options mt-3">
                     <p>Don’t have an account?
                         <router-link to="/signup">
@@ -43,9 +46,11 @@
 
 <script>
     import {logIn} from '../mixins/authentication/logIn'
+    import jwtDecode from 'jwt-decode'
 
     export default {
         name: "LogIn",
+        mixins: [logIn],
         data() {
             return {
                 form: {
@@ -58,19 +63,17 @@
         methods: {
             onLogIn(evt) {
                 evt.preventDefault();
-                // this.logInDataIsWrong = true
-                if (1 === 1) {
-                    this.$store.commit('authentication/changeIsAuth', true)
-                    alert(`Welcome ${this.form.username}`)
-                    this.$router.push('/restaurant')
-                }
-                // logIn(this.form)
-                //     .then(response => {
-                //
-                // })
-                //     .catch(error => {
-                //
-                //     })
+                this.logInDataIsWrong = false
+
+                this.logIn(this.form)
+                    .then(response => {
+                        this.$store.dispatch('authentication/setToken', response.data)
+                        alert(`Welcome ${this.form.username}`)
+                        this.$router.push('/restaurant')
+                    })
+                    .catch(error => {
+                        this.logInDataIsWrong = true
+                    })
             }
         }
     }

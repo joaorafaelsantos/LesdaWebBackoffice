@@ -4,27 +4,28 @@
 
 // Initial state
 const state = {
-    isAuth: false
+    token: sessionStorage.getItem('token')
 }
 
 // Getters
 const getters = {
-    getIsAuth(state, getters) {
-        return state.isAuth
+    getToken(state, getters) {
+        return state.token
     }
 }
 
 // Mutations
 const mutations = {
-    changeIsAuth(state, isAuth) {
-        state.isAuth = isAuth
+    setToken(state, token) {
+        state.token = token
     }
 }
 
 // Actions
 const actions = {
-    changeIsAuth (context, isAuth) {
-        context.commit('changeIsAuth', isAuth)
+    setToken (context, token) {
+        context.commit('setToken', token)
+        sessionStorage.setItem('token', token)
     }
 }
 

@@ -15,16 +15,18 @@
             <router-link to="/discounts">
                 Discounts
             </router-link>
+            <a @click="logout()">Logout</a>
         </template>
     </div>
 </template>
 
 <script>
-    import { isAuth } from "../mixins/authentication/isAuth";
+    import { isAuth } from "../mixins/authentication/isAuth"
+    import { logout } from "../mixins/authentication/logout"
 
     export default {
         name: "AppMenu",
-        mixins: [isAuth]
+        mixins: [isAuth, logout]
     }
 </script>
 

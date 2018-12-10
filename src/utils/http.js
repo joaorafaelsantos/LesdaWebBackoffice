@@ -7,6 +7,10 @@ import axios from 'axios'
 
 const getHeaders = () => {
     // Handle authorization token
+    return {
+        'Authorization': `Bearer ${sessionStorage.getItem('token')}`
+    }
+
 }
 
 export function post(uri, data) {

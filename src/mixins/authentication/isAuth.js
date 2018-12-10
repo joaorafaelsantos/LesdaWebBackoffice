@@ -5,7 +5,7 @@
 export const isAuth = {
     computed: {
         isAuth() {
-            return this.$store.getters['authentication/getIsAuth']
+            return !!this.$store.getters['authentication/getToken']
         }
     }
 }

@@ -30,7 +30,10 @@ export default new Router({
         {
             path: '/restaurant',
             name: 'Restaurant',
-            component: () => import('../views/Restaurant.vue')
+            component: () => import('../views/Restaurant.vue'),
+            meta: {
+                requiresAuth: true
+            }
         }
     ]
 })

@@ -4,13 +4,21 @@
             <div class="col">
                 <h1 class="display mb-3">Sign up</h1>
                 <b-form @submit="onSignUp" validate="true">
-                    <!-- Name -->
-                    <b-form-group id="inpGrpName">
-                        <b-form-input id="inpName"
+                    <!-- First Name -->
+                    <b-form-group id="inpGrpFirstName">
+                        <b-form-input id="inpFirstName"
                                       type="text"
-                                      v-model="form.name"
+                                      v-model="form.firstName"
                                       required
-                                      placeholder="Enter your name">
+                                      placeholder="Enter your first name">
+                        </b-form-input>
+                    </b-form-group>
+                    <b-form-group id="inpGrpLastName">
+                        <b-form-input id="inpLastName"
+                                      type="text"
+                                      v-model="form.lastName"
+                                      required
+                                      placeholder="Enter your last name">
                         </b-form-input>
                     </b-form-group>
                     <!-- Email -->
@@ -35,6 +43,7 @@
                     <b-form-group id="inpGrpPassword">
                         <b-form-input id="inpPassword"
                                       type="password"
+                                      pattern=".{6,}"
                                       v-model="form.password"
                                       required
                                       placeholder="Enter your password">
@@ -61,10 +70,12 @@
 
     export default {
         name: "SignUp",
+        mixins: [signUp],
         data() {
             return {
                 form: {
-                    name: '',
+                    firstName: '',
+                    lastName: '',
                     username: '',
                     email: '',
                     password: ''
@@ -75,20 +86,16 @@
             onSignUp(evt) {
                 evt.preventDefault();
 
-                if (this.form.name && this.form.username && this.form.email && this.form.password) {
-                    // signUp(this.form)
-                    //     .then(response => {
-                    //
-                    //     })
-                    //     .catch(error => {
-                    //
-                    //     })
-                    alert('Account created!')
-                    this.$router.push('/login')
+                if (this.form.firstName && this.form.lastName && this.form.username && this.form.email && this.form.password) {
+                    this.signUp(this.form)
+                        .then(response => {
+                            alert('Account created!')
+                            this.$router.push('/login')
+                        })
+                        .catch(error => {
+                            console.log(error)
+                        })
                 }
-                // else {
-                //     alert('correct your data')
-                // }
 
 
             }
