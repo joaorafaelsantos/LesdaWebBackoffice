@@ -15,14 +15,14 @@
             <router-link to="/discounts">
                 Discounts
             </router-link>
-            <a @click="logout()">Logout</a>
+            <a class="is-clickable" @click="logout()">Logout</a>
         </template>
     </div>
 </template>
 
 <script>
-    import { isAuth } from "../mixins/authentication/isAuth"
-    import { logout } from "../mixins/authentication/logout"
+    import {isAuth} from "../mixins/authentication/isAuth"
+    import {logout} from "../mixins/authentication/logout"
 
     export default {
         name: "AppMenu",
@@ -37,15 +37,18 @@
     .menu {
         padding: 10px 10px 50px 10px;
         text-align: center;
+
         a {
             font-weight: bold;
             color: $white;
+
             &.router-link-exact-active {
                 color: $red;
                 border-bottom: 2px solid $red;
                 padding-bottom: 10px;
             }
         }
+
         a:hover {
             text-decoration: none;
             border-bottom: 2px solid $white;
@@ -61,5 +64,9 @@
         .menu {
             text-align: right;
         }
+    }
+
+    .is-clickable {
+        cursor: pointer;
     }
 </style>

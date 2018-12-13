@@ -26,13 +26,16 @@
 
     @import "assets/scss/main";
 
-    body, html {
-        height: 100%;
+    html {
+        height: 100vh;
+    }
+    body {
+        min-height: 100vh;
     }
 
     .has-background {
         background-image: url("./assets/images/backgrounds/background.jpg");
-        height: 100%;
+        min-height: 100vh;
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;

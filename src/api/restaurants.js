@@ -2,12 +2,17 @@
  * @author João Santos <up201809187@fe.up.pt>
  */
 
-import { get, post } from '../utils/http'
+import {get, post, remove} from '../utils/http'
 
-export function loadRestaurant() {
-    return get('/api/v1/admin/restaurants?page=1&pageSize=20')
+export function loadRestaurant(context) {
+    const id = context.$store.getters['restaurant/getRestaurant'].restaurantId
+    return get(`/api/v1/admin/restaurants/${id}`)
 }
 
 export function submitRestaurant(data) {
     return post('/api/v1/admin/restaurants', data)
+}
+
+export function deleteRestaurant(id) {
+    return remove(`/api/v1/admin/restaurants/${id}`)
 }
