@@ -7,7 +7,7 @@ import { post } from '../../utils/http'
 export const logIn = {
     methods: {
         logIn(data) {
-            return post('/identity/authenticate', data)
+            return post('/token/connect', data)
         }
     }
 }

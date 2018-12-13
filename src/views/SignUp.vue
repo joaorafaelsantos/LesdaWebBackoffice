@@ -4,21 +4,13 @@
             <div class="col">
                 <h1 class="display mb-3">Sign up</h1>
                 <b-form @submit="onSignUp" validate="true">
-                    <!-- First Name -->
-                    <b-form-group id="inpGrpFirstName">
-                        <b-form-input id="inpFirstName"
+                    <!-- Name -->
+                    <b-form-group id="inpGrpName">
+                        <b-form-input id="inpName"
                                       type="text"
-                                      v-model="form.firstName"
+                                      v-model="form.name"
                                       required
-                                      placeholder="Enter your first name">
-                        </b-form-input>
-                    </b-form-group>
-                    <b-form-group id="inpGrpLastName">
-                        <b-form-input id="inpLastName"
-                                      type="text"
-                                      v-model="form.lastName"
-                                      required
-                                      placeholder="Enter your last name">
+                                      placeholder="Enter your name">
                         </b-form-input>
                     </b-form-group>
                     <!-- Email -->
@@ -49,6 +41,8 @@
                                       placeholder="Enter your password">
                         </b-form-input>
                     </b-form-group>
+                    <p>1 uppercase character, min 8 characters, min 1 number, min 1 upper, min 1 lower, maximum 14
+                        characters.</p>
                     <b-button type="submit" variant="primary">Sign up</b-button>
                 </b-form>
 
@@ -74,8 +68,7 @@
         data() {
             return {
                 form: {
-                    firstName: '',
-                    lastName: '',
+                    name: '',
                     username: '',
                     email: '',
                     password: ''
@@ -86,7 +79,7 @@
             onSignUp(evt) {
                 evt.preventDefault();
 
-                if (this.form.firstName && this.form.lastName && this.form.username && this.form.email && this.form.password) {
+                if (this.form.name && this.form.username && this.form.email && this.form.password) {
                     this.signUp(this.form)
                         .then(response => {
                             alert('Account created!')
