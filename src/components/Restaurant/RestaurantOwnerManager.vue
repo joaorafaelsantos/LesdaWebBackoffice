@@ -2,16 +2,10 @@
     <div class="container">
         <div class="row justify-content-md-center">
             <div class="col">
+                <!-- Title -->
                 <h1 class="display mb-3">My restaurant</h1>
-                <!-- Page controllers -->
-                <div class="mb-3">
-                    <a class="btn btn-secondary mr-2" v-show="!isCurrentPage(1)"
-                       @click="changePage('previous')">Previous</a>
-                    <a class="btn btn-secondary" v-show="!isCurrentPage(5)"
-                       @click="changePage('next')">Next</a>
-                </div>
                 <!-- Restaurant form -->
-                <b-form @submit="submitRestaurantData" novalidate="true">
+                <b-form @submit="submitRestaurantData" validate="true">
                     <div v-show="isCurrentPage(1)">
                         <!-- Name -->
                         <b-form-group id="inpGrpName">
@@ -356,8 +350,16 @@
 
                     </div>
 
+                    <!-- Page controllers -->
+                    <div class="mb-3">
+                        <a class="btn btn-secondary mr-2" v-show="!isCurrentPage(1)"
+                           @click="changePage('previous')">Previous</a>
+                        <a class="btn btn-secondary" v-show="!isCurrentPage(5)"
+                           @click="changePage('next')">Next</a>
+                    </div>
+
                     <!-- Action buttons -->
-                    <div class="mt-3 mb-4">
+                    <div class="mt-3 mb-4" v-show="isCurrentPage(5)">
                         <b-button type="submit" variant="primary" class="mr-2">Save</b-button>
                         <b-button v-if="$store.getters['restaurant/getRestaurant']" @click="deleteRestaurantById" variant="danger">Delete</b-button>
                     </div>
