@@ -4,13 +4,17 @@
 
 // Initial state
 const state = {
-    restaurant: null
+    restaurant: null,
+    restaurants: null
 }
 
 // Getters
 const getters = {
     getRestaurant(state, getters) {
         return state.restaurant
+    },
+    getRestaurants(state, getters) {
+        return state.restaurants
     }
 }
 
@@ -18,6 +22,9 @@ const getters = {
 const mutations = {
     setRestaurant(state, restaurant) {
         state.restaurant = restaurant
+    },
+    setRestaurants(state, restaurants) {
+        state.restaurants = restaurants
     }
 }
 
@@ -25,6 +32,9 @@ const mutations = {
 const actions = {
     setRestaurant (context, restaurant) {
         context.commit('setRestaurant', restaurant)
+    },
+    setRestaurants (context, restaurants) {
+        context.commit('setRestaurants', restaurants)
     }
 }
 

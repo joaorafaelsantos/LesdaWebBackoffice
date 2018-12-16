@@ -3,7 +3,7 @@
         <div class="row justify-content-md-center">
             <div class="col">
                 <RestaurantOwnerManager v-if="!isAdmin"></RestaurantOwnerManager>
-                <!--<AdminManager v-if="isAdmin"></AdminManager>-->
+                <RestaurantAdminManager v-if="isAdmin"></RestaurantAdminManager>
             </div>
         </div>
     </div>
@@ -12,12 +12,14 @@
 <script>
 
     import RestaurantOwnerManager from '../components/Restaurant/RestaurantOwnerManager'
+    import RestaurantAdminManager from '../components/Restaurant/RestaurantAdminManager'
     import { userRole } from '../mixins/authentication/userRole'
 
     export default {
         name: "Manager",
         components: {
-            RestaurantOwnerManager
+            RestaurantOwnerManager,
+            RestaurantAdminManager
         },
         mixins: [userRole],
     }

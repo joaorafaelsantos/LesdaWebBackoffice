@@ -9,6 +9,10 @@ export function loadRestaurant(context) {
     return get(`/api/v1/admin/restaurants/${id}`)
 }
 
+export function loadRestaurants() {
+    return get(`/api/v1/admin/restaurants`)
+}
+
 export function submitRestaurant(data) {
     return post('/api/v1/admin/restaurants', data)
 }
