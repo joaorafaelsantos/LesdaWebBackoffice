@@ -1,0 +1,4 @@
+
+> web-backoffice@0.1.0 lint /home/joaosantos/Documents/FEUP/LES/lesda-web-backoffice
+> vue-cli-service lint "compact" "file.js"
+

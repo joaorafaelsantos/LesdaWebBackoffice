@@ -16,7 +16,7 @@
     import { userRole } from '../mixins/authentication/userRole'
 
     export default {
-        name: "Manager",
+        name: "RestaurantManager",
         components: {
             RestaurantOwnerManager,
             RestaurantAdminManager

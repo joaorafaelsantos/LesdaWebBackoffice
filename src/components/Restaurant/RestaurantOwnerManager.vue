@@ -471,7 +471,7 @@
             loadUserInfo(this.userID)
                 .then(response => {
                     this.$store.dispatch('restaurant/setRestaurant', response.data.restaurant.restaurant)
-                    // this.$store.dispatch('discount/setDiscounts', response.data.restaurant.discounts)
+                    this.$store.dispatch('discounts/setDiscounts', response.data.restaurant.discounts)
                     if (response.data.restaurant.restaurant) {
                         this.loadRestaurantData()
                     }
