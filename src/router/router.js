@@ -34,6 +34,14 @@ export default new Router({
             meta: {
                 requiresAuth: true
             }
+        },
+        {
+            path: '/discounts',
+            name: 'Discounts',
+            component: () => import('../views/Discounts.vue'),
+            meta: {
+                requiresAuth: true
+            }
         }
     ]
 })
