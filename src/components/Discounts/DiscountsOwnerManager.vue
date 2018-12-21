@@ -6,12 +6,12 @@
                     <a class="btn mr-3"
                        :class="isAddDiscountSelected ? 'btn-danger' : 'btn-primary'"
                        @click="isAddDiscountSelected = !isAddDiscountSelected">
-                        Add discount
+                        Shou add discount
                     </a>
                     <a v-show="discounts && discounts.length > 0"
                        class="btn mr-3" :class="!isAddDiscountSelected ? 'btn-danger' : 'btn-primary'"
                        @click="isAddDiscountSelected = !isAddDiscountSelected">
-                        My discounts
+                        Show my discounts
                     </a>
                 </div>
 
