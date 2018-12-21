@@ -79,7 +79,7 @@
 
                         <!-- Submit button -->
                         <br>
-                        <b-button type="submit" variant="primary" class="mr-2">Add restaurant</b-button>
+                        <b-button type="submit" variant="primary" class="mr-2">Add discount</b-button>
                     </b-form>
                 </div>
                 <br>
@@ -150,8 +150,8 @@
 
                             <!-- Submit button -->
                             <br>
-                            <b-button @click="changeDiscont(discount)" type="button" variant="primary" class="mr-2">Change restaurant</b-button>
-                            <b-button @click="deleteDiscount(discount, index)" type="button" variant="danger" class="mr-2">Delete restaurant</b-button>
+                            <b-button @click="changeDiscont(discount)" type="button" variant="primary" class="mr-2">Change discount</b-button>
+                            <b-button @click="deleteDiscount(discount, index)" type="button" variant="danger" class="mr-2">Delete discount</b-button>
                         </b-form>
                     </div>
                 </div>
